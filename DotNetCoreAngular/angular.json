@@ -25,7 +25,8 @@
               "AngularApp/assets"
             ],
             "styles": [
-              "AngularApp/styles.css"
+              "AngularApp/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
