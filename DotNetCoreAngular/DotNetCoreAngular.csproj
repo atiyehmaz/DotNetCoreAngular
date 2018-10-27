@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="AngularApp\app\_models\contact.ts" />
+    <None Remove="AngularApp\app\_models\index.ts" />
+    <None Remove="AngularApp\app\_services\contact.service.ts" />
+    <None Remove="AngularApp\app\_services\index.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Node.js" Version="5.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLibrary\BusinessLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="AngularApp\app\_models\contact.ts" />
+    <TypeScriptCompile Include="AngularApp\app\_models\index.ts" />
+    <TypeScriptCompile Include="AngularApp\app\_services\contact.service.ts" />
+    <TypeScriptCompile Include="AngularApp\app\_services\index.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="AngularApp\app\components\" />
+  </ItemGroup>
+
+</Project>
