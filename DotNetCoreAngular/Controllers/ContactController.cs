@@ -27,12 +27,14 @@ namespace DotNetCoreAngular.Controllers
         }
 
         [HttpPost, Produces("application/json")]
+        [Route("SaveContact")]
         public async Task<IActionResult> SaveContact([FromBody] Contacts model)
         {
             return Json(await ContactRepo.SaveContact(model));
         }
 
-        [HttpDelete]
+        [HttpPost, Produces("application/x-www-form-urlencoded")]
+        [Route("DeleteContactByID")]
         public async Task<IActionResult> DeleteContactByID(int id)
         {
             return Json(await ContactRepo.DeleteContactByID(id));

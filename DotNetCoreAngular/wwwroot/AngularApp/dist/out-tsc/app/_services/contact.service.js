@@ -15,9 +15,9 @@ var ContactService = /** @class */ (function () {
     function ContactService(http) {
         this.http = http;
         this._getContactsUrl = "api/Contact/GetContacts";
-        this._saveUrl = '/Contact/SaveContact/';
-        this._updateUrl = '/Contact/UpdateContact/';
-        this._deleteByIdUrl = '/Contact/DeleteContactByID/';
+        this._saveUrl = 'api/Contact/SaveContact/';
+        this._updateUrl = 'api/Contact/UpdateContact/';
+        this._deleteByIdUrl = 'api/Contact/DeleteContactByID/';
     }
     ContactService.prototype.getContacts = function () {
         var headers = new Headers();
@@ -38,8 +38,14 @@ var ContactService = /** @class */ (function () {
     //Delete Operation
     ContactService.prototype.deleteContact = function (id) {
         //debugger
-        var deleteByIdUrl = this._deleteByIdUrl + '/' + id;
-        return this.http.delete(deleteByIdUrl)
+        //var deleteByIdUrl = this._deleteByIdUrl + '/' + id
+        var body = JSON.stringify(id);
+        var headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+        var options = new RequestOptions({ headers: headers });
+        //return this.http.delete(deleteByIdUrl)
+        //  .map(response => response.json().message)
+        //  .catch(this.handleError);
+        return this.http.post(this._deleteByIdUrl, body, options)
             .map(function (response) { return response.json().message; })
             .catch(this.handleError);
     };

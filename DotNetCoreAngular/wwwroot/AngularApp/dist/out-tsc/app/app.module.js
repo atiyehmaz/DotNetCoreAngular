@@ -65,6 +65,11 @@ var AppModule = /** @class */ (function () {
                     { path: '', redirectTo: 'contact', pathMatch: 'full' },
                     { path: 'contact', component: ContactComponent },
                     { path: '**', redirectTo: 'contact' }
+                ]),
+                RouterModule.forChild([
+                    { path: '', redirectTo: 'nav-menu', pathMatch: 'full' },
+                    { path: 'nav-menu', component: NavMenuComponent },
+                    { path: '**', redirectTo: 'nav-menu' }
                 ])
             ],
             providers: [
